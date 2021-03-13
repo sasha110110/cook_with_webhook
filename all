@@ -129,7 +129,7 @@ def getMessage():
 @app.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url='My Url here' + TOKEN)
+    bot.set_webhook(url='https://git.heroku.com/cookbooktelebot.git' + TOKEN)
     return "!", 200
 
 
