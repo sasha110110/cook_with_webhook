@@ -23,21 +23,9 @@ from bs4 import BeautifulSoup as bs
 
 from telebot import apihelper
 import os
+TELEBOT_URL = 'telebot_webhook/'
+BASE_URL = 'https://cookbooktelebot.herokuapp.com/'
 
-
-#bot = telebot.TeleBot(config.telebot_token)
-#apihelper.proxy = {
-  #'http', 'socks5://login:pass@12.11.22.33:8000',
-  #'https', 'socks5://login:pass@12.11.22.33:8000'
-#apihelper.proxy = {'https': 'https://23.237.22.172:1080'}
-
-#proxies = {
-       # 'http':'167.179.79.248:3128',
-        #'https':'167.179.79.248:3128'}
-
-#apihelper.proxy = {'https':'socks5h://186.126.55.30:1080'}
-
-#apihelper.proxy=proxies
 TOKEN = "1275733221:AAH0GeCdvoM_1MYzP6ImyfCXuN8FLUUijFg"
 bot = telebot.TeleBot(TOKEN)
 
@@ -125,11 +113,14 @@ def getMessage():
     bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
     return "!", 200
 
-
-@app.route("/")
+@app.route('/' + TELEBOT_URL + TOKEN, methods=['POST'])
+def get_message():
+    bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
+    return "!", 200
+@app.route('/')
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url='https://git.heroku.com/cookbooktelebot.git' + TOKEN)
+    bot.set_webhook(url=BASE_URL + TELEBOT_URL+TOKEN)
     return "!", 200
 
 
