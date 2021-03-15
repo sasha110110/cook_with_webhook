@@ -1,1 +1,1 @@
-web: python all.py
+web: python all
