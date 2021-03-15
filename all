@@ -4,7 +4,7 @@
 from selenium import webdriver
 import telebot
 from bs4 import BeautifulSoup as bs
-
+import os
 from selenium import webdriver
 
 from selenium.webdriver.chrome.options import Options
@@ -34,7 +34,6 @@ app = Flask(__name__)
 from bs4 import BeautifulSoup as bs
 
 from telebot import apihelper
-import os
 TELEBOT_URL = 'telebot_webhook/'
 BASE_URL = 'https://cookbooktelebot.herokuapp.com/'
 
