@@ -1,6 +1,9 @@
-telebot
+#telebot
 bs4
 selenium
 flask
-PyTelegramBotAPI==2.2.3
-gunicorn
+#PyTelegramBotAPI==2.2.3
+#gunicorn
+pytelegrambotapi
+flask
+dnspython
