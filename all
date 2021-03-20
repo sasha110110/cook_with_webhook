@@ -32,7 +32,7 @@ from bs4 import BeautifulSoup as bs
 TELEBOT_URL = 'telebot_webhook/'
 BASE_URL = 'https://cookbooktelebot.herokuapp.com/'
 
-TOKEN = "1275733221:AAH0GeCdvoM_1MYzP6ImyfCXuN8FLUUijFg"
+TOKEN = "1275733221:AAHGе4OiFlvf5ts2Cdml74flswdiHUeXTwg"
 bot = telebot.TeleBot(TOKEN)
 
 overall=[]
